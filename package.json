@@ -1,0 +1,23 @@
+{
+  "name": "ahst-sdk",
+  "version": "1.0.0",
+  "description": "client for ahst APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amm0nite/ahst-sdk.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amm0nite/ahst-sdk/issues"
+  },
+  "homepage": "https://github.com/amm0nite/ahst-sdk#readme",
+  "dependencies": {
+    "request": "^2.81.0"
+  },
+  "engines" : { "node" : ">=6" }
+}
