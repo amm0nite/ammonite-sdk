@@ -36,17 +36,10 @@ class Client {
         request(params, next);
     }
 
-    createJob(name, source, next) {
-        if (!isObject(source)) {
-            return next({ message:'source is not an object' });
+    createJob(job, next) {
+        if (!isObject(job)) {
+            return next({ message:'job is not an object' });
         }
-        
-        var job = {
-            name: name,
-            sourceType: source.type,
-            sourceUrl: source.url,
-            launch: true
-        };
 
         let params = this.defaults();
         params.resource = 'job';
