@@ -10,9 +10,6 @@ export class MissionControl {
     constructor(token?: string);
     append(key:string, data, next?:(err:any|null, event?) => void);
     history(key:string, next?:(err:any|null, events:any[]) => void);
-    load(key:string, next?:(err:any|null, value) => void);
-    save(key:string, value, next?:(err:any|null, value?) => void);
-    send(message, options, next?:(err:any|null, message?) => void);
 }
 
 export class Backend {
