@@ -1,9 +1,5 @@
-const cloud = require('./clients/cloud.js');
-const mc = require('./clients/mc.js');
-const backend = require('./clients/backend.js');
+const Cloud = require('./clients/cloud.js');
+const MissionControl = require('./clients/mc.js');
+const Backend = require('./clients/backend.js');
 
-module.exports = {
-    Cloud: cloud,
-    MissionControl: mc,
-    Backend: backend,
-};
+module.exports = { Cloud, MissionControl, Backend };
