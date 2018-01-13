@@ -13,17 +13,24 @@ class Client {
         return defaults;
     }
 
-    getDevice(secret, next) {
+    getDevices(next) {
         let params = this.defaults();
-        params.resource = 'device/' + secret;
+        params.resource = 'devices';
 
         request(params, next);
     }
 
-    createDevice(data, next) {
+    claimDevice(secret, next) {
         let params = this.defaults();
-        params.resource = 'device';
-        params.data = data;
+        params.resource = 'claim';
+        params.data = { secret };
+
+        request(params, next);
+    }
+
+    getRoutines(next) {
+        let params = this.defaults();
+        params.resource = 'routines';
 
         request(params, next);
     }
