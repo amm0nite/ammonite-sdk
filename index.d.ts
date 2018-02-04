@@ -25,6 +25,8 @@ export class Backend {
 
 export class BackendAdmin {
     constructor(token?: string);
+    getUser(uid:string, next?:(err:Error|null, user?) => void);
     getDevice(secret:string, next?:(err:Error|null, device?) => void);
+    getUnclaimedDevices(next?:(err:Error|null, devices?:any[]) => void);
     createDevice(data, next?:(err:Error|null, device?) => void);
 }

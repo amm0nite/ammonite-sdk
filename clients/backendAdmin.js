@@ -13,6 +13,13 @@ class Client {
         return defaults;
     }
 
+    getUser(uid, next) {
+        let params = this.defaults();
+        params.resource = 'user/' + uid;
+
+        request(params, next);
+    }
+
     getDevice(secret, next) {
         let params = this.defaults();
         params.resource = 'device/' + secret;
@@ -24,6 +31,13 @@ class Client {
         let params = this.defaults();
         params.resource = 'device';
         params.data = data;
+
+        request(params, next);
+    }
+
+    getUnclaimedDevices(next) {
+        let params = this.defaults();
+        params.resource = 'devices/unclaimed';
 
         request(params, next);
     }
