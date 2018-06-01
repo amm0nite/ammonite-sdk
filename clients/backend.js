@@ -64,6 +64,14 @@ class Client {
 
         request(params, next);
     }
+
+    sendMessage(uid, message, next) {
+        let params = this.defaults();
+        params.resource = 'device/' + uid + '/message';
+        params.data = message;
+
+        request(params, next);
+    }
 }
 
 module.exports = Client;

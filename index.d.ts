@@ -21,6 +21,7 @@ export class Backend {
     createRoutine(data, next?:(err:Error|null, routine?) => void);
     bindRoutine(uid:string, name:string, next?:(err:Error|null) => void);
     unbindRoutine(uid:string, name:string, next?:(err:Error|null) => void);
+    sendMessage(uid:string, message, next?:(err:Error|null) => void);
 }
 
 export class BackendAdmin {
