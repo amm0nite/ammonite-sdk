@@ -6,7 +6,7 @@ class Client {
     }
 
     defaults() {
-        let defaults = { baseUrl: 'https://mc.ahst.fr' };
+        let defaults = { baseUrl: 'https://mc.amnt.fr' };
         if (this.token) {
             defaults.token = this.token;
         }

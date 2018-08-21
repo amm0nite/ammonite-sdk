@@ -12,7 +12,7 @@ class Client {
     }
 
     defaults() {
-        let defaults = { baseUrl: 'https://cloud.ahst.fr' };
+        let defaults = { baseUrl: 'https://cloud.amnt.fr' };
         if (this.token) {
             defaults.token = this.token;
         }

@@ -6,7 +6,7 @@ class Client {
     }
 
     defaults() {
-        let defaults = { baseUrl: 'https://backend.ahst.fr/admin' };
+        let defaults = { baseUrl: 'https://backend.amnt.fr/admin' };
         if (this.secret) {
             defaults.secret = this.secret;
         }
