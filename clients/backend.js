@@ -6,7 +6,7 @@ class Client {
     }
 
     defaults() {
-        let defaults = { baseUrl: 'https://backend.ahst.fr/api' };
+        let defaults = { baseUrl: 'https://backend.amnt.fr/api' };
         if (this.token) {
             defaults.token = this.token;
         }
