@@ -1,6 +1,7 @@
-const Cloud = require('./clients/cloud.js');
+
 const MissionControl = require('./clients/mc.js');
 const Backend = require('./clients/backend.js');
 const BackendAdmin = require('./clients/backendAdmin.js');
+const Timelapse = require('./clients/timelapse.js');
 
-module.exports = { Cloud, MissionControl, Backend, BackendAdmin };
+module.exports = { MissionControl, Backend, BackendAdmin, Timelapse };

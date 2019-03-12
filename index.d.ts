@@ -1,11 +1,4 @@
 
-export class Cloud {
-    constructor(token?: string);
-    fetchJobs(options, next?:(err: Error|null, jobs?:any[]) => void);
-    fetchJob(id: number, next?:(err:Error|null, job?) => void);
-    createJob(job, next?:(err:Error|null, job?) => void);
-}
-
 export class MissionControl {
     constructor(token?: string);
     append(key:string, data, next?:(err:Error|null, event?) => void);
@@ -30,4 +23,10 @@ export class BackendAdmin {
     getDevice(secret:string, next?:(err:Error|null, device?) => void);
     getUnclaimedDevices(next?:(err:Error|null, devices?:any[]) => void);
     createDevice(data, next?:(err:Error|null, device?) => void);
+}
+
+export class Timelapse {
+    constructor(token?: string);
+    getCapture(channel:string, next?:(err: Error|null, bytes?) => void);
+    getChannels(next?:(err:Error|null, channels?:any[]) => void);
 }
