@@ -21,7 +21,11 @@ class Client {
         request(params, next);
     }
 
-    history(key, next) {
+    history(key, limit, next) {
+        if (!next && typeof limit === "function") {
+            next = limit;
+        }
+
         let params = this.defaults();
         params.resource = 'data/' + key;
 

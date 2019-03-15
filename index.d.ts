@@ -2,7 +2,7 @@
 export class MissionControl {
     constructor(token?: string);
     append(key:string, data, next?:(err:Error|null, event?) => void);
-    history(key:string, next?:(err:Error|null, events?:any[]) => void);
+    history(key:string, limit?:number, next?:(err:Error|null, events?:any[]) => void);
 }
 
 export class Backend {
