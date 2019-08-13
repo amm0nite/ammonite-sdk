@@ -1,7 +1,7 @@
 {
-  "name": "ahst-sdk",
+  "name": "ammonite-sdk",
   "version": "4.2.0",
-  "description": "client for ahst APIs",
+  "description": "client for ammonite APIs",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amm0nite/ahst-sdk.git"
+    "url": "git+https://github.com/amm0nite/ammonite-sdk.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/amm0nite/ahst-sdk/issues"
+    "url": "https://github.com/amm0nite/ammonite-sdk/issues"
   },
-  "homepage": "https://github.com/amm0nite/ahst-sdk#readme",
+  "homepage": "https://github.com/amm0nite/ammonite-sdk#readme",
   "dependencies": {
     "debug": "^4.1.1",
     "request": "^2.83.0"
