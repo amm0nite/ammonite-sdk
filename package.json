@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/amm0nite/ahst-sdk#readme",
   "dependencies": {
-    "debug": "^3.1.0",
+    "debug": "^4.1.1",
     "request": "^2.83.0"
   },
   "engines": {
