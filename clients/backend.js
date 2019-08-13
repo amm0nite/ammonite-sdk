@@ -28,6 +28,14 @@ class Client {
         request(params, next);
     }
 
+    unclaimDevice(uid, next) {
+        let params = this.defaults();
+        params.resource = 'device/' + uid + '/claim';
+        params.delete = true;
+
+        request(params, next);
+    }
+
     getRoutines(next) {
         let params = this.defaults();
         params.resource = 'routines';

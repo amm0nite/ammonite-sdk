@@ -9,6 +9,7 @@ export class Backend {
     constructor(token?: string);
     getDevices(next?:(err:Error|null, devices?:any[]) => void);
     claimDevice(secret:string, next?:(err:Error|null, device?) => void);
+    unclaimDevice(uid:string, next?:(err:Error|null, device?) => void);
     getRoutines(next?:(err:Error|null, routines?:any[]) => void);
     getDeviceRoutines(uid:string, next?:(err:Error|null, routines?:any[]) => void);
     createRoutine(data, next?:(err:Error|null, routine?) => void);
