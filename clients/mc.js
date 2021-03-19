@@ -1,35 +1,35 @@
 const request = require('../lib/request.js');
 
 class Client {
-    constructor(token) {
+    constructor(url, token) {
+        this.url = url;
         this.token = token;
     }
 
     defaults() {
-        let defaults = { baseUrl: 'https://mc.amnt.fr' };
+        const defaults = { baseURL: this.url };
         if (this.token) {
             defaults.token = this.token;
         }
         return defaults;
     }
 
-    append(key, data, next) {
-        let params = this.defaults();
-        params.resource = 'data/' + key,
-        params.data = data;
+    append(key, data) {
+        const options = this.defaults();
+        options.resource = 'data/' + key,
+        options.data = data;
 
-        request(params, next);
+        return request(options);
     }
 
-    history(key, limit, next) {
-        if (!next && typeof limit === "function") {
-            next = limit;
+    history(key, limit) {
+        const options = this.defaults();
+        options.resource = 'data/' + key;
+        if (limit) {
+            options.params = { limit };
         }
 
-        let params = this.defaults();
-        params.resource = 'data/' + key;
-
-        request(params, next);
+        return request(options);
     }
 }
 

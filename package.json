@@ -18,10 +18,9 @@
   },
   "homepage": "https://github.com/amm0nite/ammonite-sdk#readme",
   "dependencies": {
-    "debug": "^4.3.1",
-    "request": "^2.88.2"
+    "axios": "^0.21.1"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=14"
   }
 }

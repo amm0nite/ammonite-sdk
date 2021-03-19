@@ -1,84 +1,85 @@
 const request = require('../lib/request.js');
 
 class Client {
-    constructor(token) {
+    constructor(url, token) {
+        this.url = url;
         this.token = token;
     }
 
     defaults() {
-        let defaults = { baseUrl: 'https://backend.amnt.fr/api' };
+        const defaults = { baseURL: this.url };
         if (this.token) {
             defaults.token = this.token;
         }
         return defaults;
     }
 
-    getDevices(next) {
-        let params = this.defaults();
-        params.resource = 'devices';
+    getDevices() {
+        const options = this.defaults();
+        options.resource = 'devices';
 
-        request(params, next);
+        return request(options);
     }
 
-    claimDevice(secret, next) {
-        let params = this.defaults();
-        params.resource = 'claim';
-        params.data = { secret };
+    claimDevice(secret) {
+        const options = this.defaults();
+        options.resource = 'claim';
+        options.data = { secret };
 
-        request(params, next);
+        return request(options);
     }
 
-    unclaimDevice(uid, next) {
-        let params = this.defaults();
-        params.resource = 'device/' + uid + '/claim';
-        params.delete = true;
+    unclaimDevice(uid) {
+        const options = this.defaults();
+        options.resource = 'device/' + uid + '/claim';
+        options.method = 'delete';
 
-        request(params, next);
+        return request(options);
     }
 
-    getRoutines(next) {
-        let params = this.defaults();
-        params.resource = 'routines';
+    getRoutines() {
+        const options = this.defaults();
+        options.resource = 'routines';
 
-        request(params, next);
+        return request(options);
     }
 
-    getDeviceRoutines(uid, next) {
-        let params = this.defaults();
-        params.resource = 'device/' + uid + '/routines';
+    getDeviceRoutines(uid) {
+        const options = this.defaults();
+        options.resource = 'device/' + uid + '/routines';
 
-        request(params, next);
+        return request(options);
     }
 
-    createRoutine(data, next) {
-        let params = this.defaults();
-        params.resource = 'routine';
-        params.data = data;
+    createRoutine(data) {
+        const options = this.defaults();
+        options.resource = 'routine';
+        options.data = data;
 
-        request(params, next);
+        return request(options);
     }
 
-    bindRoutine(uid, name, next) {
-        let params = this.defaults();
-        params.resource = 'device/' + uid + '/routine/' + name;
+    bindRoutine(uid, name) {
+        const options = this.defaults();
+        options.resource = 'device/' + uid + '/routine/' + name;
 
-        request(params, next);
+        return request(options);
     }
 
-    unbindRoutine(uid, name, next) {
-        let params = this.defaults();
-        params.resource = 'device/' + uid + '/routine/' + name;
-        params.delete = true;
+    unbindRoutine(uid, name) {
+        const options = this.defaults();
+        options.resource = 'device/' + uid + '/routine/' + name;
+        options.method = 'delete';
 
-        request(params, next);
+        return request(options);
     }
 
-    sendMessage(uid, message, next) {
-        let params = this.defaults();
-        params.resource = 'device/' + uid + '/message';
-        params.data = message;
+    sendMessage(uid, message) {
+        const options = this.defaults();
+        options.resource = 'device/' + uid + '/message';
+        options.data = message;
 
-        request(params, next);
+        return request(options);
     }
 }
 

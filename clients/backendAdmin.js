@@ -1,45 +1,46 @@
 const request = require('../lib/request.js');
 
 class Client {
-    constructor(secret) {
+    constructor(url, secret) {
+        this.url = url;
         this.secret = secret;
     }
 
     defaults() {
-        let defaults = { baseUrl: 'https://backend.amnt.fr/admin' };
+        const defaults = { baseURL: this.url };
         if (this.secret) {
             defaults.secret = this.secret;
         }
         return defaults;
     }
 
-    getUser(uid, next) {
-        let params = this.defaults();
-        params.resource = 'user/' + uid;
+    getUser(uid) {
+        const options = this.defaults();
+        options.resource = 'user/' + uid;
 
-        request(params, next);
+        return request(options);
     }
 
-    getDevice(secret, next) {
-        let params = this.defaults();
-        params.resource = 'device/' + secret;
+    getDevice(secret) {
+        const options = this.defaults();
+        options.resource = 'device/' + secret;
 
-        request(params, next);
+        return request(options);
     }
 
-    createDevice(data, next) {
-        let params = this.defaults();
-        params.resource = 'device';
-        params.data = data;
+    createDevice(data) {
+        const options = this.defaults();
+        options.resource = 'device';
+        options.data = data;
 
-        request(params, next);
+        return request(options);
     }
 
-    getUnclaimedDevices(next) {
-        let params = this.defaults();
-        params.resource = 'devices/unclaimed';
+    getUnclaimedDevices() {
+        const options = this.defaults();
+        options.resource = 'devices/unclaimed';
 
-        request(params, next);
+        return request(options);
     }
 }
 
