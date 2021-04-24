@@ -25,3 +25,8 @@ export class BackendAdmin {
     getUnclaimedDevices():Promise<any[]>;
     createDevice(data):Promise<any>;
 }
+
+export class Tracker {
+    constructor(url: string, token: string);
+    pmtklox(data): Promise<any>;
+}
