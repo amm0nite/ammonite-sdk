@@ -1,6 +1,6 @@
 {
   "name": "ammonite-sdk",
-  "version": "5.1.2",
+  "version": "5.1.3",
   "description": "client for ammonite APIs",
   "main": "index.js",
   "types": "index.d.ts",
