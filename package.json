@@ -18,9 +18,8 @@
   },
   "homepage": "https://github.com/amm0nite/ammonite-sdk#readme",
   "dependencies": {
-    "axios": "^0.26.0"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   }
 }
