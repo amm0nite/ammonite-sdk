@@ -1,6 +1,6 @@
-const request = require('../lib/request.js');
+import request from '../lib/request.js';
 
-class Client {
+export default class Client {
     constructor(url, secret) {
         this.url = url;
         this.secret = secret;
@@ -43,5 +43,3 @@ class Client {
         return request(options);
     }
 }
-
-module.exports = Client;

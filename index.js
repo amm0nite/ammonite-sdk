@@ -1,7 +1,7 @@
 
-const MissionControl = require('./clients/mc.js');
-const Backend = require('./clients/backend.js');
-const BackendAdmin = require('./clients/backendAdmin.js');
-const Tracker = require('./clients/tracker.js');
+import MissionControl from './clients/mc.js';
+import Backend from './clients/backend.js';
+import BackendAdmin from './clients/backendAdmin.js';
+import Tracker from './clients/tracker.js';
 
-module.exports = { MissionControl, Backend, BackendAdmin, Tracker };
+export { MissionControl, Backend, BackendAdmin, Tracker };
