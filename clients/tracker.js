@@ -21,6 +21,14 @@ class Client {
 
         return request(options);
     }
+
+    createPoint(data) {
+        const options = this.defaults();
+        options.resource = 'point',
+        options.data = data;
+
+        return request(options);
+    }
 }
 
 module.exports = Client;

@@ -29,4 +29,5 @@ export class BackendAdmin {
 export class Tracker {
     constructor(url: string, token: string);
     pmtklox(data): Promise<any>;
+    point(data): Promise<any>;
 }
